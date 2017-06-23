@@ -7,12 +7,14 @@ export function Carousel(dom, options) {
 //轮播图初始化，将其传入的不同结构进行重构
 Carousel.prototype.init = function () {
    this.timer = setInterval(()=>{
-       let arr 
+       let arr
        if(arr = this.domToArray()){
+           if(!arr[0]) {
+             return
+           }
            this.arrayToDom(arr)
            clearInterval(this.timer)
        }
-
    }, 20)
 }
 

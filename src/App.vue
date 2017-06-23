@@ -1,9 +1,15 @@
 <template>
   <div>
     <carousel>
-     <div>123123</div>
-     <div><p></p></div>
-     <li></li>
+      <ul>
+        <li v-for="item in groups">
+          <img :src="item.img_url"/>
+          <div>
+            <p>{{item.title}}</p>
+            <p>{{item.intro}}</p>
+          </div>
+        </li>
+      </ul>
     </carousel>
   </div>
 </template>
